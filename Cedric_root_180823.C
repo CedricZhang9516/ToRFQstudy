@@ -1,0 +1,61 @@
+#define Cedric_root_180823_cxx
+#include "Cedric_root_180823.h"
+#include <TH2.h>
+#include <TStyle.h>
+#include <TCanvas.h>
+
+//const string output = "dump_Mu_Cedric.dat";
+//const string output = "dump_Mu_Cedric_D87000_T322_Nrepeat2000000_Xfree1_Thick7.12_NewGeo0_.dat";
+//const string output = "dump_Mu_Cedric_D87000_T322_Nrepeat840000_Xfree1_Thick2.00_NewGeo1_.dat";
+//const string output = "dump_Mu_Cedric_D87000_T322_Nrepeat840000_Xfree1_Thick2.00_NewGeo1_0827.dat";
+const string output = "dump_Mu_Cedric_D87000_T322_Nrepeat2000000_Xfree1_Thick7.12_NewGeo0_0827.dat";
+void Cedric_root_180823::Loop()
+{
+//   In a ROOT session, you can do:
+//      Root > .L Cedric_root_180823.C
+//      Root > Cedric_root_180823 t
+//      Root > t.GetEntry(12); // Fill t data members with entry number 12
+//      Root > t.Show();       // Show values of entry 12
+//      Root > t.Show(16);     // Read and show values of entry 16
+//      Root > t.Loop();       // Loop on all entries
+//
+
+//     This is the loop skeleton where:
+//    jentry is the global entry number in the chain
+//    ientry is the entry number in the current Tree
+//  Note that the argument to GetEntry must be:
+//    jentry for TChain::GetEntry
+//    ientry for TTree::GetEntry and TBranch::GetEntry
+//
+//       To read only selected branches, Insert statements like:
+// METHOD1:
+//    fChain->SetBranchStatus("*",0);  // disable all branches
+//    fChain->SetBranchStatus("branchname",1);  // activate branchname
+// METHOD2: replace line
+//    fChain->GetEntry(jentry);       //read all branches
+//by  b_branchname->GetEntry(ientry); //read only this branch
+   if (fChain == 0) return;
+   ofstream wf(output.c_str());
+   Long64_t nentries = fChain->GetEntriesFast();
+   const double mmu = 105.658;
+   Long64_t nbytes = 0, nb = 0;
+   for (Long64_t jentry=0; jentry<nentries;jentry++) {
+      Long64_t ientry = LoadTree(jentry);
+      if (ientry < 0) break;
+      nb = fChain->GetEntry(jentry);   nbytes += nb;
+      double p = 1.0*sqrt(2.0*LaserE*mmu+LaserE*LaserE);
+      double g = 1.0*(mmu+LaserE)/mmu;
+      double b = 1.0*sqrt(2.0*LaserE*mmu+LaserE*LaserE)/(mmu+LaserE);
+      cout << g << "\t" << b << endl;
+      wf << LaserX*0.1 << " "
+	 << LaserXp*1000 << " "
+	 << LaserY*0.1 << " "
+	 << LaserYp*1000 << " "
+	 << mmu/1000*g*b << " "
+	 << LaserZ << " "
+	 << 0 << " "
+	 << "-1 -1" << endl;
+
+      // if (Cut(ientry) < 0) continue;
+   }
+}

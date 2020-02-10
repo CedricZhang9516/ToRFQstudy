@@ -1,0 +1,298 @@
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+    2   79.5 cm  -1.61 mm  -83.9 cm      0 eV      0 eV      0 fm    500 um   phys_MCHvac  DecayWithSpin
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+  326   77.9 cm   1.14 cm    -68 cm    761 eV 2.9e-18 eV    150 um   16.3 cm   phys_MCHvac  DecayWithSpin
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 3751   79.3 cm   5.81 cm   1.03 m    5.63 keV6.46e-19 eV     17 um   1.87 m    OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 3751   77.1 cm  -4.94 mm   1.03 m    5.65 keV1.28e-18 eV   33.5 um   1.87 m    OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+    1   77.1 cm  -1.62 mm  -84.1 cm      0 eV  0.841 eV    154 um    154 um   phys_MCHvac  DecayWithSpin
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 2689   76.8 cm  -5.08 cm   49.8 cm   5.63 keV9.27e-18 eV    244 um   1.34 m    phys_World  DecayWithSpin
+    1    1.1 m   -7.43 cm   33.2 cm   42.9 MeV     0 eV   37.2 cm   37.2 cm   OutOfWorld  Transportation
+    1    -70 cm     30 cm   59.1 cm   43.2 MeV     0 eV   1.51 m    1.51 m    OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 3755   69.9 cm   -1.8 cm   1.03 m    5.64 keV1.82e-17 eV    478 um   1.88 m    OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+  851   77.4 cm  -2.97 mm  -41.8 cm   5.61 keV9.44e-18 eV    248 um   42.4 cm   phys_SP1vac  DecayWithSpin
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 3755   72.4 cm  -5.25 cm   1.03 m    5.64 keV6.62e-18 eV    174 um   1.88 m    OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 3747   76.1 cm  -3.88 cm   1.03 m    5.63 keV2.21e-18 eV   58.1 um   1.87 m    OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 3757   86.8 cm  -1.08 cm   1.03 m    5.65 keV7.26e-18 eV    191 um   1.88 m    OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 3750   80.9 cm  -2.72 cm   1.03 m    5.64 keV1.61e-17 eV    423 um   1.87 m    OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 3757   73.6 cm   6.43 cm   1.03 m    5.65 keV9.27e-18 eV    243 um   1.88 m    OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+    2   77.7 cm   6.44 mm  -83.9 cm      0 eV      0 eV      0 fm    500 um   phys_MCHvac  DecayWithSpin
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+    2   77.8 cm  -8.84 mm  -83.9 cm      0 eV      0 eV      0 fm    500 um   phys_MCHvac  DecayWithSpin
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 3753   75.8 cm  -8.31 cm   1.03 m    5.62 keV2.66e-18 eV     70 um   1.87 m    OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 3754     72 cm  -4.56 cm   1.03 m    5.64 keV4.16e-18 eV    109 um   1.88 m    OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+    1   79.8 cm  -1.02 cm  -84.2 cm    2.2 eV 0.0168 eV    349 um    349 um   phys_MCHvac  DecayWithSpin
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 3759   86.9 cm  -1.18 cm   1.03 m    5.65 keV1.05e-17 eV    276 um   1.88 m    OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+    2     77 cm   1.29 cm  -83.9 cm      0 eV      0 eV      0 fm    500 um   phys_MCHvac  DecayWithSpin
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 3747   76.9 cm   2.24 cm   1.03 m    5.64 keV6.88e-18 eV    181 um   1.87 m    OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 3761   88.4 cm  -4.72 cm   1.03 m    5.64 keV2.27e-19 eV   5.96 um   1.88 m    OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 3749   80.5 cm  -3.99 cm   1.03 m    5.63 keV4.98e-18 eV    131 um   1.87 m    OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+   93   79.2 cm   9.66 mm  -79.4 cm    181 eV 9.04e-19 eV   95.7 um   4.61 cm   phys_MCHvac  DecayWithSpin
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 3763   87.2 cm  -5.85 cm   1.03 m    5.64 keV7.56e-18 eV    199 um   1.88 m    OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+  197   77.9 cm   4.47 mm  -74.2 cm    485 eV 5.93e-18 eV    384 um   9.84 cm   phys_MCHvac  DecayWithSpin
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 2141   73.9 cm  -1.24 cm   22.3 cm   5.64 keV7.14e-18 eV    188 um   1.07 m    phys_World  DecayWithSpin
+    1   41.2 cm    -30 cm   10.2 cm   46.3 MeV     0 eV   45.1 cm   45.1 cm   OutOfWorld  Transportation
+    1    1.1 m    19.2 cm   46.8 cm   45.3 MeV     0 eV   48.2 cm   48.2 cm   OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 1733   78.9 cm   1.09 cm   1.98 cm   5.65 keV1.11e-17 eV    292 um   86.4 cm   phys_World  DecayWithSpin
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 3759   86.4 cm   5.57 cm   1.03 m    5.64 keV1.22e-17 eV    321 um   1.88 m    OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 3748   76.5 cm   2.36 cm   1.03 m    5.63 keV9.04e-18 eV    237 um   1.87 m    OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 2570     79 cm   8.54 mm   44.2 cm   5.63 keV2.41e-18 eV   63.4 um   1.28 m    phys_World  DecayWithSpin
+    1   46.9 cm     30 cm     17 cm   39.7 MeV     0 eV   51.2 cm   51.2 cm   OutOfWorld  Transportation
+    1      1 m     -30 cm   59.3 cm   49.9 MeV     0 eV   40.3 cm   40.3 cm   OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+    2   77.7 cm   4.51 mm  -83.9 cm      0 eV      0 eV      0 fm    500 um   phys_MCHvac  DecayWithSpin
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+  268   78.1 cm   1.81 mm  -70.8 cm    635 eV 1.61e-19 eV   9.06 um   13.4 cm   phys_MCHvac  DecayWithSpin
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 3746   77.9 cm  -1.86 cm   1.03 m    5.63 keV4.06e-18 eV    107 um   1.87 m    OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 2465   77.1 cm  -2.27 mm   38.7 cm   5.65 keV9.04e-18 eV    237 um   1.23 m    phys_World  DecayWithSpin
+    1   88.6 cm     30 cm   50.1 cm   23.3 MeV     0 eV   34.3 cm   34.3 cm   OutOfWorld  Transportation
+    1   48.8 cm   25.5 cm   1.03 m    33.9 MeV     0 eV   74.8 cm   74.8 cm   OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+  158     76 cm   6.26 mm  -76.2 cm    366 eV 6.89e-19 eV   51.2 um   7.86 cm   phys_MCHvac  DecayWithSpin
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 3744   80.7 cm  -2.02 mm   1.03 m    5.63 keV8.63e-18 eV    227 um   1.87 m    OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 1016     78 cm    579 um  -33.3 cm   5.63 keV3.66e-18 eV   96.1 um   50.7 cm   phys_SP1vac  DecayWithSpin
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+  166   78.3 cm   2.13 cm  -76.1 cm    392 eV 2.83e-18 eV    204 um   8.27 cm   phys_MCHvac  DecayWithSpin
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 3751   83.6 cm   -3.5 cm   1.03 m    5.63 keV8.59e-18 eV    226 um   1.87 m    OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 2086     80 cm  -3.81 mm   19.8 cm   5.64 keV8.97e-18 eV    236 um   1.04 m    phys_World  DecayWithSpin
+    1   20.4 cm    -30 cm  -5.66 cm   23.5 MeV     0 eV   71.2 cm   71.2 cm   OutOfWorld  Transportation
+    1    1.1 m   -16.8 cm   33.3 cm   46.1 MeV     0 eV   36.8 cm   36.8 cm   OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 3751   73.3 cm  -1.91 cm   1.03 m    5.64 keV9.4e-18 eV    247 um   1.87 m    OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 3751   78.8 cm  -2.79 cm   1.03 m    5.65 keV9.33e-18 eV    245 um   1.87 m    OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 3760   73.7 cm  -7.44 cm   1.03 m    5.65 keV2.85e-18 eV   74.9 um   1.88 m    OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 3762   86.5 cm  -6.79 cm   1.03 m    5.64 keV6.87e-18 eV    180 um   1.88 m    OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 3747   75.9 cm   8.47 mm   1.03 m    5.63 keV5.71e-18 eV    150 um   1.87 m    OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+    1   76.4 cm    1.1 cm  -84.3 cm    2.3 eV 0.00262 eV    291 um    291 um   phys_MCHvac  DecayWithSpin
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+   62   77.5 cm  -1.54 cm  -81.2 cm    134 eV 1.47e-18 eV    181 um   3.07 cm   phys_MCHvac  DecayWithSpin
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 3746   75.1 cm  -2.25 cm   1.03 m    5.64 keV1.53e-17 eV    401 um   1.87 m    OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 1079   77.9 cm    603 um  -30.7 cm   5.64 keV8.73e-18 eV    229 um   53.8 cm   phys_SP1vac  DecayWithSpin
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 3765   87.6 cm   6.74 cm   1.03 m    5.65 keV1.09e-17 eV    286 um   1.88 m    OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+    4   77.7 cm  -1.46 cm    -84 cm   8.84 eV 4.3e-19 eV    216 um   1.72 mm   phys_MCHvac  DecayWithSpin
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 3022   81.3 cm  -1.61 cm   66.5 cm   5.64 keV1.41e-17 eV    371 um   1.51 m    phys_World  DecayWithSpin
+    1  -22.6 cm    -30 cm   41.2 cm     24 MeV     0 eV   1.11 m    1.11 m    OutOfWorld  Transportation
+    1   1.01 m     -30 cm  -11.5 cm   35.9 MeV     0 eV   85.4 cm   85.4 cm   OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 3752   73.7 cm   4.15 mm   1.03 m    5.64 keV1.61e-18 eV   42.2 um   1.87 m    OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+  877   77.8 cm   1.42 mm  -40.6 cm   5.64 keV1.12e-17 eV    295 um   43.8 cm   phys_SP1vac  DecayWithSpin
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 3746   77.1 cm  -1.69 cm   1.03 m    5.63 keV4.26e-18 eV    112 um   1.87 m    OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+  332   80.1 cm   1.05 cm  -67.8 cm    766 eV 8.52e-18 eV    438 um   16.6 cm   phys_MCHvac  DecayWithSpin
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+   70   76.3 cm   -1.6 cm  -80.8 cm    148 eV 1.05e-18 eV    122 um   3.46 cm   phys_MCHvac  DecayWithSpin
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+  302   78.9 cm   1.63 cm  -69.2 cm    701 eV 8.42e-18 eV    453 um   15.1 cm   phys_MCHvac  DecayWithSpin
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 3754   74.7 cm   3.76 cm   1.03 m    5.65 keV8.01e-18 eV    210 um   1.88 m    OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 2440   82.9 cm   3.43 mm   37.2 cm   5.65 keV8.48e-18 eV    223 um   1.22 m    phys_World  DecayWithSpin
+    1   51.9 cm    -30 cm   56.2 cm   44.8 MeV     0 eV   47.3 cm   47.3 cm   OutOfWorld  Transportation
+    1    1.1 m   -1.07 mm   32.5 cm   29.3 MeV     0 eV   27.5 cm   27.5 cm   OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+   21     76 cm   8.61 mm  -83.3 cm     38 eV 1.71e-18 eV    407 um   1.04 cm   phys_MCHvac  DecayWithSpin
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 3749   74.2 cm   9.73 mm   1.03 m    5.64 keV1.64e-17 eV    431 um   1.87 m    OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+   13     79 cm    4.5 mm  -83.5 cm   13.5 eV 9.38e-19 eV    381 um   6.38 mm   phys_MCHvac  DecayWithSpin
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 3753     82 cm   7.85 cm   1.03 m    5.62 keV5.97e-18 eV    157 um   1.87 m    OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 3745   79.9 cm   -3.9 mm   1.03 m    5.63 keV4.45e-18 eV    117 um   1.87 m    OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 1934   78.2 cm   -807 um   12.2 cm   5.65 keV1.23e-17 eV    323 um   96.6 cm   phys_World  DecayWithSpin
+    1   90.1 cm    -30 cm   8.48 cm   23.4 MeV     0 eV   32.4 cm   32.4 cm   OutOfWorld  Transportation
+    1  -81.1 cm   1.94 cm  -1.03 m    40.2 MeV     0 eV   1.97 m    1.97 m    OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 3759     85 cm  -8.11 cm   1.03 m    5.64 keV3.29e-18 eV   86.5 um   1.88 m    OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 3752   74.6 cm  -2.42 cm   1.03 m    5.65 keV8.05e-19 eV   21.1 um   1.87 m    OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 3744   77.5 cm  -1.92 mm   1.03 m    5.63 keV1.98e-19 eV   5.21 um   1.87 m    OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 3757   70.6 cm   1.63 cm   1.03 m    5.64 keV5.37e-18 eV    141 um   1.88 m    OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 3752     72 cm   8.83 mm   1.03 m    5.64 keV1.09e-18 eV   28.7 um   1.87 m    OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+    1   77.4 cm   5.13 mm  -84.2 cm   1.82 eV 0.0281 eV    267 um    267 um   phys_MCHvac  DecayWithSpin
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 3758   80.6 cm  -7.92 cm   1.03 m    5.64 keV1.69e-17 eV    443 um   1.88 m    OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+    2   77.5 cm  -8.74 mm  -83.9 cm      0 eV      0 eV      0 fm    500 um   phys_MCHvac  DecayWithSpin
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 3752   73.1 cm   1.06 cm   1.03 m    5.64 keV9.04e-18 eV    237 um   1.87 m    OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+    2   76.5 cm  -1.55 cm  -83.9 cm      0 eV      0 eV      0 fm    500 um   phys_MCHvac  DecayWithSpin
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 3748   77.4 cm  -2.35 cm   1.03 m    5.64 keV6.7e-18 eV    176 um   1.87 m    OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 2091   78.8 cm  -1.67 cm     20 cm   5.65 keV1.88e-17 eV    493 um   1.04 m    phys_World  DecayWithSpin
+    1    1.1 m   -25.1 cm   21.8 cm   17.8 MeV     0 eV   39.1 cm   39.1 cm   OutOfWorld  Transportation
+    1    1.1 m    20.6 cm   30.6 cm   39.8 MeV     0 eV   39.8 cm   39.8 cm   OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 3746   76.8 cm  -3.21 cm   1.03 m    5.63 keV1.33e-17 eV    349 um   1.87 m    OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 3751   82.6 cm   7.35 mm   1.03 m    5.64 keV5.38e-18 eV    141 um   1.87 m    OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 3749   83.5 cm   7.51 mm   1.03 m    5.63 keV1.44e-17 eV    378 um   1.87 m    OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+    2   78.5 cm   7.96 mm  -83.9 cm      0 eV      0 eV      0 fm    500 um   phys_MCHvac  DecayWithSpin
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+  121   78.1 cm   2.07 cm  -78.2 cm    241 eV 4.65e-18 eV    429 um   6.04 cm   phys_MCHvac  DecayWithSpin
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+  147   76.1 cm   9.44 mm  -76.8 cm    328 eV 2.54e-18 eV    200 um   7.32 cm   phys_MCHvac  DecayWithSpin
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 3754   80.9 cm  -4.26 cm   1.03 m    5.65 keV1.04e-17 eV    272 um   1.87 m    OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 1104   77.9 cm   -638 um    -29 cm   5.63 keV7.52e-18 eV    197 um   55.1 cm   phys_SP1vac  DecayWithSpin
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 2398   77.7 cm   2.82 cm   35.6 cm   5.63 keV1.3e-17 eV    342 um    1.2 m    phys_World  DecayWithSpin
+    1    1.1 m   -10.2 cm  -18.5 cm   23.9 MeV     0 eV   64.3 cm   64.3 cm   OutOfWorld  Transportation
+    1   68.3 cm    -30 cm  -22.4 cm   30.1 MeV     0 eV   67.2 cm   67.2 cm   OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 3751   81.3 cm   9.37 mm   1.03 m    5.65 keV1.23e-17 eV    323 um   1.87 m    OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 3754   86.8 cm   -5.7 cm   1.03 m    5.61 keV1.79e-17 eV    471 um   1.88 m    OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+  372   79.7 cm  -1.21 cm  -65.6 cm    914 eV 5.72e-18 eV    269 um   18.6 cm   phys_MCHvac  DecayWithSpin
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+    2   76.8 cm  -1.54 cm  -84.1 cm   3.31 eV 2.02e-19 eV    183 um    683 um   phys_MCHvac  DecayWithSpin
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 3760   69.4 cm  -6.03 cm   1.03 m    5.64 keV5.11e-18 eV    134 um   1.88 m    OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 3755   86.1 cm   2.59 cm   1.03 m    5.63 keV3.04e-18 eV   79.9 um   1.88 m    OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 3745   78.2 cm  -1.77 cm   1.03 m    5.63 keV3.21e-18 eV   84.2 um   1.87 m    OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 1534   78.3 cm   3.89 mm  -7.44 cm   5.63 keV6.9e-19 eV   18.1 um   76.6 cm   phys_SP1vac  DecayWithSpin
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 3751   77.1 cm    569 um   1.03 m    5.65 keV 1e-18 eV   26.3 um   1.87 m    OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 1895   76.9 cm   6.31 mm   10.2 cm   5.64 keV8.21e-18 eV    216 um   94.6 cm   phys_World  DecayWithSpin
+    1   60.8 cm     30 cm   30.4 cm   29.5 MeV     0 eV   39.1 cm   39.1 cm   OutOfWorld  Transportation
+    1    1.1 m    7.44 cm  -7.71 mm   38.4 MeV     0 eV   35.5 cm   35.5 cm   OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+  805   78.6 cm  -2.95 mm  -44.3 cm   5.62 keV4.02e-18 eV    106 um   40.2 cm   phys_SP1vac  DecayWithSpin
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 3746   79.4 cm  -2.01 cm   1.03 m    5.63 keV6.34e-18 eV    167 um   1.87 m    OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 3753   79.9 cm   -7.6 cm   1.03 m    5.63 keV9.17e-18 eV    241 um   1.87 m    OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 3746     76 cm   -2.4 cm   1.03 m    5.63 keV1.09e-17 eV    286 um   1.87 m    OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+    2   78.3 cm  -1.72 cm  -83.9 cm      0 eV      0 eV      0 fm    500 um   phys_MCHvac  DecayWithSpin
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 3754   73.7 cm   -1.4 cm   1.03 m    5.66 keV2.91e-18 eV   76.3 um   1.88 m    OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 3748   74.3 cm   5.27 mm   1.03 m    5.63 keV1.48e-17 eV    390 um   1.87 m    OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+    1     77 cm   2.78 mm  -84.3 cm   3.32 eV 0.00118 eV    405 um    405 um   phys_MCHvac  DecayWithSpin
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 1496   79.1 cm   -761 um  -9.76 cm   5.64 keV3.44e-18 eV   90.4 um   74.6 cm   phys_SP1vac  DecayWithSpin
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 2026   77.5 cm  -7.32 mm   17.1 cm   5.63 keV1.43e-18 eV   37.4 um   1.01 m    phys_World  DecayWithSpin
+    1    1.1 m    19.1 cm   40.7 cm   34.4 MeV     0 eV   44.8 cm   44.8 cm   OutOfWorld  Transportation
+    1  -34.2 cm    -30 cm  -51.3 cm   51.1 MeV     0 eV   1.34 m    1.34 m    OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 3744   76.8 cm   -6.9 mm   1.03 m    5.63 keV2.35e-18 eV   61.6 um   1.87 m    OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+    1   77.6 cm  -3.79 mm    -84 cm   1.48 eV 0.0482 eV    414 um    414 um   phys_MCHvac  DecayWithSpin
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 3756   80.6 cm   6.09 cm   1.03 m    5.65 keV9.06e-18 eV    238 um   1.88 m    OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 3753   75.8 cm  -4.93 cm   1.03 m    5.64 keV1.32e-17 eV    348 um   1.87 m    OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 3748   74.2 cm   1.89 cm   1.03 m    5.63 keV1.27e-18 eV   33.3 um   1.87 m    OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 3757   83.7 cm    9.1 cm   1.03 m    5.63 keV6.93e-18 eV    182 um   1.88 m    OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 3318     76 cm   2.21 cm   81.5 cm   5.63 keV1.27e-17 eV    334 um   1.66 m    phys_World  DecayWithSpin
+    1   67.7 cm    -30 cm   90.4 cm   31.8 MeV     0 eV   34.4 cm   34.4 cm   OutOfWorld  Transportation
+    1   32.7 cm     30 cm   70.5 cm   35.5 MeV     0 eV   52.6 cm   52.6 cm   OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 3750   83.2 cm  -2.48 cm   1.03 m    5.63 keV1.7e-17 eV    446 um   1.87 m    OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 3746   79.9 cm   4.47 mm   1.03 m    5.63 keV4.27e-18 eV    112 um   1.87 m    OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+    2     78 cm   1.95 cm  -83.9 cm      0 eV      0 eV      0 fm    500 um   phys_MCHvac  DecayWithSpin
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 3754   82.8 cm   7.93 cm   1.03 m    5.62 keV1.52e-17 eV    399 um   1.88 m    OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+    2   78.6 cm   3.09 mm  -83.9 cm      0 eV      0 eV      0 fm    500 um   phys_MCHvac  DecayWithSpin
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+    2   79.6 cm   1.27 cm    -84 cm   3.01 eV 4.1e-19 eV    438 um    938 um   phys_MCHvac  DecayWithSpin
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+  666     78 cm  -1.92 mm  -50.9 cm   5.47 keV1.55e-17 eV    409 um   33.3 cm   phys_MCHvac  DecayWithSpin
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 3745   75.6 cm  -2.73 cm   1.03 m    5.63 keV1.51e-17 eV    397 um   1.87 m    OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 3747   79.8 cm  -2.08 cm   1.03 m    5.63 keV8.22e-18 eV    216 um   1.87 m    OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 3750   79.8 cm  -5.93 mm   1.03 m    5.64 keV3.93e-18 eV    103 um   1.87 m    OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+   28   77.9 cm  -8.41 mm  -82.7 cm   50.9 eV 1.7e-18 eV    344 um   1.38 cm   phys_MCHvac  DecayWithSpin
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 3745   77.8 cm  -9.97 mm   1.03 m    5.63 keV9.54e-19 eV   25.1 um   1.87 m    OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+    2   79.4 cm   1.46 cm  -83.9 cm      0 eV      0 eV      0 fm    500 um   phys_MCHvac  DecayWithSpin
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 3746   77.3 cm   2.41 cm   1.03 m    5.63 keV6.7e-18 eV    176 um   1.87 m    OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+  822   77.4 cm   -289 um  -43.4 cm   5.62 keV1.49e-17 eV    391 um     41 cm   phys_SP1vac  DecayWithSpin
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 3755   70.7 cm  -2.69 mm   1.03 m    5.64 keV3.28e-18 eV   86.2 um   1.88 m    OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 3746   76.1 cm  -1.96 cm   1.03 m    5.63 keV8.7e-18 eV    228 um   1.87 m    OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 2089   76.2 cm  -1.64 cm   19.9 cm   5.64 keV1.02e-17 eV    269 um   1.04 m    phys_World  DecayWithSpin
+    1    1.1 m    -9.8 cm   26.7 cm     47 MeV     0 eV   35.4 cm   35.4 cm   OutOfWorld  Transportation
+    1  -33.2 cm     30 cm   99.1 cm   24.6 MeV     0 eV   1.39 m    1.39 m    OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 3747   80.5 cm  -3.98 cm   1.03 m    5.63 keV5.5e-18 eV    144 um   1.87 m    OutOfWorld  Transportation
+* G4Track Information:   Particle = mu+,   Track ID = 1,   Parent ID = 0
+ 3753     83 cm  -3.32 cm   1.03 m    5.64 keV4.04e-19 eV   10.6 um   1.87 m    OutOfWorld  Transportation

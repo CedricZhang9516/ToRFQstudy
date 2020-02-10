@@ -1,0 +1,148 @@
+#define ONED
+//#define TWOD
+
+//const string draw = "save_px/save_pz:save_x-780";
+//const string draw = "save_py/save_pz:save_y";
+
+//const string draw = "save_ke*1000";
+const string draw = "det_time_start*1000";
+const string cut  = "save_detID==654&&save_particleID==-13";
+
+const int nf = 3;
+const string filename[nf] = 
+  // {"data/highstat_150407.root", 
+  {//"data/highstat_150407.root", 
+    "data/tdr_cedric.root",
+   //"data/tdr_cedric_D87000_T322_Nrepeat2000000_Xfree1_Thick7.12_NewGeo0_0828_3_2.root",
+   "data/musr_0.root",
+   "data/tdr_cedric_D87000_T322_Nrepeat840000_Xfree1_Thick2.00_NewGeo1_0828_3.root"
+   //"data/musr_0.root"
+
+
+  };
+TFile* fF[nf];
+TTree* fT[nf];
+
+TCanvas* c1;
+#ifdef TWOD
+TH2F*  fH[nf];
+const int    xnbin = 60;
+const double xmin  = -12;
+const double xmax  = 12;
+const int    ynbin = 60;
+const double ymin  = -0.12;
+const double ymax  = 0.12;
+#endif
+#ifdef ONED
+TH1F*  fH[nf];
+//const int    xnbin = 100;
+const int    xnbin = 120;
+
+//const double xmin  = 5.6;
+//const double xmin  = 4.75;
+//const double xmax  = 5.75;
+
+/*
+const double xmin  = 465;
+const double xmax  = 490;
+*/
+const double xmin  = 460;
+const double xmax  = 580;
+
+/*
+const double xmin  = 465;
+const double xmax  = 520;
+*/
+const double ymin  = 0;
+const double ymax  = 4000;
+//const string legname[nf] = {"TDR (N_evt scale)","Cedric"};
+const string legname[nf] = {"TDR","Cedric (Geo0)", "Cedric (Geo1)"};
+//const int fHstyle[nf]= {3552,3525};
+const int fHstyle[nf]= {3350,3552,3525};
+const int fHcolor[nf]= {1, 2,4};
+//const double scale[nf] = {12364./16967,1};
+const double scale[nf] = {1,1, 1};
+#endif
+
+//const string xtitle = "keV";
+const string xtitle = "ns";
+//const string xtitle = "x (mm)";
+//const string xtitle = "y (mm)";
+//const string ytitle = "Events";
+
+const string ytitle = "Events/1ns";
+//const string ytitle = "x' (rad)";
+//const string ytitle = "y' (rad)";
+//const string title[nf] = {"Energy","",""};
+const string title[nf] = {"TDR","Cedric (Geo0)","Cedric (Geo1)"};
+void macro_180823_compare_cedric(){
+
+#ifdef TWOD
+gStyle->SetOptStat(1110);
+//c1 = new TCanvas("c1","",10,10,1000,600);
+ c1 = new TCanvas("c1","",10,10,1500,600);
+  c1->Divide(nf,1);
+  for(int i=0;i<nf; i++){
+    c1 -> cd(i+1);
+    fF[i] = new TFile(filename[i].c_str(), "read");
+    fT[i] = (TTree*)fF[i]->Get("t1");
+    
+    fH[i] = new TH2F(Form("fH%d",i),"",xnbin, xmin, xmax, ynbin, ymin, ymax);
+    fT[i]->Draw(Form("%s>>fH%d",draw.c_str(),i),cut.c_str(), "colz");
+    //fT[i]->Draw(Form("%s>>fH%d(%d,%lf,%lf,%d,%lf,%lf)",draw.c_str(),i, xnbin, xmin, xmax, ynbin, ymin, ymax),cut.c_str(), "colz");
+    fH[i]->GetXaxis()->SetRangeUser(xmin,xmax);
+    fH[i]->GetYaxis()->SetRangeUser(ymin,ymax);
+    fH[i]->SetXTitle(xtitle.c_str());
+    fH[i]->SetYTitle(ytitle.c_str());
+    fH[i]->SetTitle(title[i].c_str());
+    fH[i]->Draw("colz");
+
+    c1->Update();
+    cin.get();
+  }
+  c1->cd();
+  c1->Update();
+#endif
+
+#ifdef ONED
+  gStyle->SetOptStat(0);
+  c1 = new TCanvas("c1","");
+  for(int i=0;i<nf; i++){
+    fF[i] = new TFile(filename[i].c_str(), "read");
+    fT[i] = (TTree*)fF[i]->Get("t1");
+    
+    fH[i] = new TH1F(Form("fH%d",i),"",xnbin, xmin, xmax);
+
+    fT[i]->Project(Form("fH%d",i),draw.c_str(),cut.c_str() );
+    //fT[i]->Draw(Form("%s>>fH%d(%d,%lf,%lf,%d,%lf,%lf)",draw.c_str(),i, xnbin, xmin, xmax, ynbin, ymin, ymax),cut.c_str(), "colz");
+    //fH[i]->GetXaxis()->SetRangeUser(xmin,xmax);
+
+    fH[i]->SetXTitle(xtitle.c_str());
+    fH[i]->SetYTitle(ytitle.c_str());
+    fH[i]->SetNdivisions(606,"X");   
+    fH[i]->SetFillStyle(fHstyle[i]);
+    fH[i]->SetFillColor(fHcolor[i]);
+    fH[i]->SetLineColor(fHcolor[i]);
+    fH[i]->Scale(scale[i]);
+    fH[i]->GetYaxis()->SetRangeUser(ymin,ymax);
+
+    if(i==0)
+      fH[i]->Draw("");
+    else
+      fH[i]->Draw("same");
+    //c1->Update();
+    //cin.get();
+  }
+  c1->cd();
+  c1->Update();
+  TLegend* leg = new TLegend(0.65,0.6,0.9,0.9);
+  //TLegend* leg = new TLegend(0.25,0.6,0.55,0.9);
+  leg -> SetShadowColor(0);
+  leg -> SetFillColor(0);
+  leg -> SetLineColor(0);
+  for(int i=0; i<nf; i++)
+    leg -> AddEntry(fH[i],legname[i].c_str(),"f");
+  leg->Draw();
+#endif
+
+};

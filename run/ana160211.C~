@@ -1,0 +1,67 @@
+#define ana160211_cxx
+#include "ana160211.h"
+#include <TH2.h>
+#include <TStyle.h>
+#include <TCanvas.h>
+
+void ana160211::Loop()
+{
+//   In a ROOT session, you can do:
+//      Root > .L ana160211.C
+//      Root > ana160211 t
+//      Root > t.GetEntry(12); // Fill t data members with entry number 12
+//      Root > t.Show();       // Show values of entry 12
+//      Root > t.Show(16);     // Read and show values of entry 16
+//      Root > t.Loop();       // Loop on all entries
+//
+
+//     This is the loop skeleton where:
+//    jentry is the global entry number in the chain
+//    ientry is the entry number in the current Tree
+//  Note that the argument to GetEntry must be:
+//    jentry for TChain::GetEntry
+//    ientry for TTree::GetEntry and TBranch::GetEntry
+//
+//       To read only selected branches, Insert statements like:
+// METHOD1:
+//    fChain->SetBranchStatus("*",0);  // disable all branches
+//    fChain->SetBranchStatus("branchname",1);  // activate branchname
+// METHOD2: replace line
+//    fChain->GetEntry(jentry);       //read all branches
+//by  b_branchname->GetEntry(ientry); //read only this branch
+   if (fChain == 0) return;
+
+   Long64_t nentries = fChain->GetEntriesFast();
+   ofstream wf("output.txt");
+   Long64_t nbytes = 0, nb = 0;
+   for (Long64_t jentry=0; jentry<nentries;jentry++) {
+      Long64_t ientry = LoadTree(jentry);
+      if (ientry < 0) break;
+      nb = fChain->GetEntry(jentry);   nbytes += nb;
+      int nhit653 = 0;
+      int nhit654 = 0;
+      double ix, iy, ft;
+      for(int det_i=0; det_i<det_n; det_i++){
+	if(det_VrtxParticleID[det_i]==-13){
+	  if(det_ID[det_i]==653){
+	    nhit653++;
+	    ix = det_VrtxX[det_i];
+	    iy = det_VrtxY[det_i];
+	  }//653
+	  if(det_ID[det_i]==654){
+	    nhit654++;
+	    ft = det_time_start[det_i];
+	  }//654
+	}//
+      }//det_i
+      if( nhit653==1 && nhit654==1 ){
+	wf << ix << "\t"
+	   << iy << "\t"
+	   << ft << "\t"
+	   << endl;
+      }//if
+
+      // if (Cut(ientry) < 0) continue;
+   }
+   wf.close();
+}

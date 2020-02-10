@@ -1,0 +1,19 @@
+double x,y,t;
+const double xmin = 0;
+const double xmax = 50;
+const double ymin = -10;
+const double ymax = 10;
+const int    xnbin = 100;
+const int    ynbin = 100;
+void macro_160211_2(){
+  TH2F* fH = new TH2F("","",xnbin, xmin, xmax, ynbin, ymin, ymax);
+  ifstream f("output.txt");
+  while(f>>x>>y>>t){
+    x = x-780;
+    double r = sqrt(x*x+y*y);
+    t = t*1000 - 477;
+    cout << r << "\t" << t << endl;
+    fH -> Fill(r,t);
+  }//
+  fH -> Draw("colz");
+}

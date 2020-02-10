@@ -1,0 +1,90 @@
+#define dump_cxx
+#include "dump.h"
+#include <TH2.h>
+#include <TStyle.h>
+#include <TCanvas.h>
+//const string output = "150317_muon.txt";
+//const string output = "150407_muon.txt";
+const string output = "150417_muon_addT_rev160920.txt";
+#define DETID 654
+void dump::Loop()
+{
+//   In a ROOT session, you can do:
+//      Root > .L dump.C
+//      Root > dump t
+//      Root > t.GetEntry(12); // Fill t data members with entry number 12
+//      Root > t.Show();       // Show values of entry 12
+//      Root > t.Show(16);     // Read and show values of entry 16
+//      Root > t.Loop();       // Loop on all entries
+//
+
+//     This is the loop skeleton where:
+//    jentry is the global entry number in the chain
+//    ientry is the entry number in the current Tree
+//  Note that the argument to GetEntry must be:
+//    jentry for TChain::GetEntry
+//    ientry for TTree::GetEntry and TBranch::GetEntry
+//
+//       To read only selected branches, Insert statements like:
+// METHOD1:
+//    fChain->SetBranchStatus("*",0);  // disable all branches
+//    fChain->SetBranchStatus("branchname",1);  // activate branchname
+// METHOD2: replace line
+//    fChain->GetEntry(jentry);       //read all branches
+//by  b_branchname->GetEntry(ientry); //read only this branch
+   if (fChain == 0) return;
+
+   Long64_t nentries = fChain->GetEntriesFast();
+
+   Long64_t nbytes = 0, nb = 0;
+   //ofstream wf("140617_negativemuonium_simulated_SOA_rev.txt");
+   //ofstream wf("140617_negativemuonium_simulated_SOA_rev_test.txt");
+   //ofstream wf("140617_negativemuonium_simulated_SOA_rev_test.txt");
+   ofstream wf(output.c_str());
+
+   //wf << "E(keV)\tPx(MeV/c)\tPy(MeV/c)\tPz(MeV/c)\tX(mm)\tY(mm)\tZ(mm)" << endl;
+   wf << "E(keV)\tPx(MeV/c)\tPy(MeV/c)\tPz(MeV/c)\tX(mm)\tY(mm)\tZ(mm)\tT(ns)" << endl;
+   //wf << "Px(MeV/c)\tPy(MeV/c)\tPz(MeV/c)\tX(mm)\tY(mm)\tZ(mm)" << endl;
+   for (Long64_t jentry=0; jentry<nentries;jentry++) {
+      Long64_t ientry = LoadTree(jentry);
+      if (ientry < 0) break;
+      nb = fChain->GetEntry(jentry);   nbytes += nb;
+      // if (Cut(ientry) < 0) continue;
+
+      for(int i=0; i<save_n; i++){
+	if(save_detID[i] != DETID )
+	  continue;
+	//160920 add
+	if(det_VrtxParticleID[i]!=-13)continue;
+	wf << save_ke[i] << "\t"
+	
+	   << save_px[i]  << "\t"
+	   << save_py[i]  << "\t"
+	   << save_pz[i]  << "\t"
+	   << save_x[i]  -780  << "\t"
+	   << save_y[i]    << "\t"
+	   << save_z[i]  +340.1 -362.5  << "\t"
+	   << det_time_start[0]*1000.0  << "\t"
+	   << endl;
+	
+
+      }
+
+      /*
+      for(int i=0; i<7; i++){
+	if(det_ID[i]!=997)continue;
+	if(det_VrtxParticleID[i]!=-13)continue;
+
+	wf << det_kine[i] << "\t"
+	
+	     << save_px[0]  << "\t"
+	     << save_py[0]  << "\t"
+	     << save_pz[0]  << "\t"
+	     << det_x[i]  -780  << "\t"
+	     << det_y[i]    << "\t"
+	     << det_z[i]  +340.1  << "\t"
+	     << endl;
+      }//i
+      */
+   }
+}

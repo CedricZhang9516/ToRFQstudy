@@ -1,0 +1,31 @@
+//to answer the question at the review meeting
+
+string filename = "dump_Mu.dat";
+string output   = "test.root";
+double x, xp, y, yp, tmp, z, t;
+TFile* fF;
+TTree* fT;
+void Book(string filename){
+  fF = new TFile(filename.c_str(), "read");
+  fT = new TTree();
+  fT -> Branch("x", &x, "x/D");
+  fT -> Branch("y", &y, "y/D");
+  fT -> Branch("z", &z, "z/D");
+  fT -> Branch("xp", &xp, "xp/D");
+  fT -> Branch("yp", &yp, "yp/D");
+}
+//____________________________
+void Close(){
+  fT -> Write();
+  fF -> Write();
+  fF -> Close();
+}
+//____________________________
+void macro_161115_reiew_atLaser(){
+  ifstream rf(filename.c_str());
+  Book(output.c_str());
+  while(rf >> x >> xp >> y >> yp >> tmp >> z >> t >> tmp >> tmp){
+    fT -> Fill();
+  }//while
+  Close();  
+}
