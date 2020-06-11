@@ -132,7 +132,7 @@ void musrPrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
   }
 
   G4double x, y, z;
-  G4double MUONID; // Cedric 200610
+  G4double MUONID = 0; // Cedric 200610
   G4double p;
   G4double xangle, yangle;
   float zTmp;
@@ -153,7 +153,7 @@ void musrPrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
       }
       numberOfGeneratedEvents++;
       //sscanf(&line[0],"%g %g %g %g %g %g %g %d %d",&xTmp,&xAngleTmp,&yTmp,&yAngleTmp,&pTmp,&dummy1,&dummy2,&Ztmp,&Atmp);
-      sscanf(&line[0],"%g %g %g %g %g %g %g %d %d %f",&xTmp,&xAngleTmp,&yTmp,&yAngleTmp,&pTmp,&zTmp,&t0,&Ztmp,&Atmp,&MUONIDtmp);
+      sscanf(&line[0],"%g %g %g %g %g %g %g %d %d %lf",&xTmp,&xAngleTmp,&yTmp,&yAngleTmp,&pTmp,&zTmp,&t0,&Ztmp,&Atmp,&MUONIDtmp);
       //changed by M. Otani for injection to RFQ study, 150225
       //MUONID added by Cedric, 200610
       if (boolPrintInfoAboutGeneratedParticles) {
