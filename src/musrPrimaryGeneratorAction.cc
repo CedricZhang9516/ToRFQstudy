@@ -66,7 +66,7 @@ musrPrimaryGeneratorAction::musrPrimaryGeneratorAction(
    muonDecayTimeMin(-1), muonDecayTimeMax(-1), muonMeanLife(2197.03*ns),
    takeMuonsFromTurtleFile(false), z0_InitialTurtle(0),
    numberOfGeneratedEvents(0),
-   MUONID(0),//added  by Cedric, 200610
+   //MUONID(0),//added  by Cedric, 200610
    turtleMomentumBite(false), turtleMomentumP0(0.), turtleSmearingFactor(0.)
 						      //, firstCall(true)
 {
