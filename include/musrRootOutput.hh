@@ -59,7 +59,7 @@ class musrRootOutput  {
 
   // Setting variables common to the whole event:
     void SetRunID          (G4int id) {runID_t = id;};
-    void SetMuonID         (G4double muonid) { muonID_t = muonid;}
+    void SetMuonID         (G4double muonid = 0) { muonID_t = muonid;}
     void SetEventID        (G4int id) {eventID_t = id;};
     void SetDecayDetectorID (std::string detectorName) {muDecayDetID_t = SensDetectorMapping[detectorName];};
     void SetBField       (G4double F[6]) {B_t[0]=F[0]/tesla; B_t[1]=F[1]/tesla; B_t[2]=F[2]/tesla;

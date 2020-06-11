@@ -153,7 +153,7 @@ void musrPrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
       }
       numberOfGeneratedEvents++;
       //sscanf(&line[0],"%g %g %g %g %g %g %g %d %d",&xTmp,&xAngleTmp,&yTmp,&yAngleTmp,&pTmp,&dummy1,&dummy2,&Ztmp,&Atmp);
-      sscanf(&line[0],"%g %g %g %g %g %g %g %d %d %g",&xTmp,&xAngleTmp,&yTmp,&yAngleTmp,&pTmp,&zTmp,&t0,&Ztmp,&Atmp,&MUONIDtmp);
+      sscanf(&line[0],"%g %g %g %g %g %g %g %d %d %f",&xTmp,&xAngleTmp,&yTmp,&yAngleTmp,&pTmp,&zTmp,&t0,&Ztmp,&Atmp,&MUONIDtmp);
       //changed by M. Otani for injection to RFQ study, 150225
       //MUONID added by Cedric, 200610
       if (boolPrintInfoAboutGeneratedParticles) {
