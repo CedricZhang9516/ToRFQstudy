@@ -142,7 +142,7 @@ void musrPrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
     G4int checkNrOfCounts=0;
     do {
       float xTmp, yTmp, xAngleTmp, yAngleTmp, pTmp;
-      double MUONIDtemp;
+      double MUONIDtmp;
       float dummy1, dummy2;
       int Ztmp=-1, Atmp=-1;
       fgets(line,500,fTurtleFile);
