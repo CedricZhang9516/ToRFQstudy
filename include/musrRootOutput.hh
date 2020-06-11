@@ -83,11 +83,12 @@ class musrRootOutput  {
 			      G4double px, G4double py, G4double pz) ;
 
     void SetInitialMuonParameters(G4double x, G4double y, G4double z, G4double px, G4double py, G4double pz,
-				  G4double xpolaris, G4double ypolaris, G4double zpolaris, G4double particleTime) {
+				  G4double xpolaris, G4double ypolaris, G4double zpolaris, G4double particleTime, G4double muonid) {
       muIniTime_t=particleTime/microsecond;
       muIniPosX_t=x;  muIniPosY_t=y;  muIniPosZ_t=z;
       muIniMomX_t=px; muIniMomY_t=py; muIniMomZ_t=pz;
       muIniPolX_t=xpolaris; muIniPolY_t=ypolaris; muIniPolZ_t=zpolaris;
+      muonID_t = muonid;
     }
 
     void PrintInitialMuonParameters() {

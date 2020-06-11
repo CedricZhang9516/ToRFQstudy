@@ -366,10 +366,10 @@ void musrPrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
   }
 
   // Save variables into ROOT output file:
-  myRootOutput->SetInitialMuonParameters(x,y,z,px,py,pz,xpolaris,ypolaris,zpolaris,ParticleTime);
+  myRootOutput->SetInitialMuonParameters(x,y,z,px,py,pz,xpolaris,ypolaris,zpolaris,ParticleTime, MUONID);
   myRootOutput->StoreGeantParameter(7,float(numberOfGeneratedEvents));
 
-  myRootOutput->SetMuonID(MUONID);
+  //myRootOutput->SetMuonID(MUONID);
   //StoreGeantParameter(8,double());
 
   if (boolPrintInfoAboutGeneratedParticles) {
