@@ -59,35 +59,37 @@ class musrRootOutput  {
 
   // Setting variables common to the whole event:
     void SetRunID          (G4int id) {runID_t = id;};
+    void SetMuonID         (G4double muonid) { muonID_t = muonid;}
     void SetEventID        (G4int id) {eventID_t = id;};
     void SetDecayDetectorID (std::string detectorName) {muDecayDetID_t = SensDetectorMapping[detectorName];};
-    void SetBField       (G4double F[6]) {B_t[0]=F[0]/tesla; B_t[1]=F[1]/tesla; B_t[2]=F[2]/tesla; 
+    void SetBField       (G4double F[6]) {B_t[0]=F[0]/tesla; B_t[1]=F[1]/tesla; B_t[2]=F[2]/tesla;
                                           B_t[3]=F[3]/tesla; B_t[4]=F[4]/tesla; B_t[5]=F[5]/tesla;};
     void SetDecayPolarisation (G4ThreeVector pol) {muDecayPolX_t=pol.x(); muDecayPolY_t=pol.y(); muDecayPolZ_t=pol.z();};
-    void SetDecayPosition (G4ThreeVector pos) {muDecayPosX_t=pos.x()/mm; muDecayPosY_t=pos.y()/mm; 
+    void SetDecayPosition (G4ThreeVector pos) {muDecayPosX_t=pos.x()/mm; muDecayPosY_t=pos.y()/mm;
                                                muDecayPosZ_t=pos.z()/mm;};
     void SetEventWeight  (G4double w) {weight_t *= w;}
-    void SetDetectorInfo (G4int nDetectors, G4int ID, G4int particleID, G4double edep, 
-                          G4double edep_el, G4double edep_pos, 
-			  G4double edep_gam, G4double edep_mup,G4int nsteps, G4double length, G4double t1, 
+    void SetDetectorInfo (G4int nDetectors, G4int ID, G4int particleID, G4double edep,
+                          G4double edep_el, G4double edep_pos,
+			  G4double edep_gam, G4double edep_mup,G4int nsteps, G4double length, G4double t1,
 			  G4double t2, G4double x, G4double y, G4double z,
-			  G4double ek, G4double ekVertex, G4double xVertex, G4double yVertex, G4double zVertex, 
+			  G4double ek, G4double ekVertex, G4double xVertex, G4double yVertex, G4double zVertex,
 			  G4int idVolVertex, G4int idProcVertex, G4int idTrackVertex) ;
 
     void SetDetectorInfoVvv (G4int nDetectors,
-			     G4double ekVertex, G4double xVertex, G4double yVertex, G4double zVertex, 
+			     G4double ekVertex, G4double xVertex, G4double yVertex, G4double zVertex,
 			     G4int idVolVertex, G4int idProcVertex, G4int idTrackVertex, G4int particleID) ;
 
-    void SetSaveDetectorInfo (G4int ID, G4int particleID, G4double ke, G4double x, G4double y, G4double z, 
+    void SetSaveDetectorInfo (G4int ID, G4int particleID, G4double ke, G4double x, G4double y, G4double z,
 			      G4double px, G4double py, G4double pz) ;
 
-    void SetInitialMuonParameters(G4double x, G4double y, G4double z, G4double px, G4double py, G4double pz, 
+    void SetInitialMuonParameters(G4double x, G4double y, G4double z, G4double px, G4double py, G4double pz,
 				  G4double xpolaris, G4double ypolaris, G4double zpolaris, G4double particleTime) {
       muIniTime_t=particleTime/microsecond;
       muIniPosX_t=x;  muIniPosY_t=y;  muIniPosZ_t=z;
       muIniMomX_t=px; muIniMomY_t=py; muIniMomZ_t=pz;
-      muIniPolX_t=xpolaris; muIniPolY_t=ypolaris; muIniPolZ_t=zpolaris; 
+      muIniPolX_t=xpolaris; muIniPolY_t=ypolaris; muIniPolZ_t=zpolaris;
     }
+
     void PrintInitialMuonParameters() {
       G4cout<<"musrRootOutput.hh: Initial muon parameters: x="<<muIniPosX_t<<", y="<<muIniPosY_t<<", z="<<muIniPosZ_t
 	    <<", px="<<muIniMomX_t << ", py="<<muIniMomY_t<<", pz="<<muIniMomZ_t<<G4endl;
@@ -118,12 +120,13 @@ class musrRootOutput  {
       else {G4cout<<"musrRootOutput.hh::StoreGeantParameter:  index="<<i<<" out of range"
 		  <<" (maxNGeantParameters=" <<maxNGeantParameters<<")"<<G4endl;}
     };
-    
+
 
     TH2F *htest1, *htest2;
     TH1F *htest3, *htest4, *htest5, *htest6, *htest7, *htest8;
 
   public:
+    static G4bool store_muonID;
     static G4bool store_runID;
     static G4bool store_eventID;
     static G4bool store_weight;
@@ -213,17 +216,18 @@ class musrRootOutput  {
     static const Int_t maxNGeantParameters=30;
     Double_t GeantParametersD[maxNGeantParameters];   // parameters transfered from GEANT to Root
           // 0 ... fieldOption:  0 ... no field, 1 ... uniform, 2 ... gaussian, 3 ... from table
-          // 1 ... fieldValue:   intensity of the magnetic field         
+          // 1 ... fieldValue:   intensity of the magnetic field
           // 2 ... minimum of the generated decay time of the muon (in microsecond)
           // 3 ... maximum of the generated decay time of the muon (in microsecond)
           // 4 ... muon mean life time (in microsecond)
           // 5 ... nr. of the last generated event
           // 6 ... run number
-          // 7 ... numberOfGeneratedEvents (i.e. number of the generated events; 
-          //                    in case of Turtle nr. of events tried); 
+          // 7 ... numberOfGeneratedEvents (i.e. number of the generated events;
+          //                    in case of Turtle nr. of events tried);
 
   // Variables common to the whole event:
     Int_t runID_t;
+    Double_t muonID_t;
     Int_t eventID_t;
     Double_t weight_t;
     Double_t B_t[6];

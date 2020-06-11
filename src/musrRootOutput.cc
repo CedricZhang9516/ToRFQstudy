@@ -61,6 +61,7 @@ musrRootOutput* musrRootOutput::GetRootInstance() {
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+G4bool musrRootOutput::store_muonID = true;
 G4bool musrRootOutput::store_runID = true;
 G4bool musrRootOutput::store_eventID = true;
 G4bool musrRootOutput::store_weight = true;
@@ -151,6 +152,9 @@ void musrRootOutput::BeginOfRunAction() {
   sprintf(RootOutputFileName, "data/musr_%i.root", tmpRunNr);
   rootFile=new TFile(RootOutputFileName,"recreate");
   rootTree=new TTree("t1","a simple Tree with simple variables");
+  //Cedric, 200610
+  if (store_muonID)        {rootTree->Branch("muonID",&muonID_t,"muonID/D");}
+
   if (store_runID)        {rootTree->Branch("runID",&runID_t,"runID/I");}
   if (store_eventID)      {rootTree->Branch("eventID",&eventID_t,"eventID/I");}
   if (store_weight)       {rootTree->Branch("weight",&weight_t,"weight/D");}
@@ -319,8 +323,8 @@ void musrRootOutput::ClearAllRootVariables() {
   muDecayPosX_t=-1000;muDecayPosY_t=-1000;muDecayPosZ_t=-1000;
   muDecayTime_t=-1000;
   posIniMomx_t=-1000;posIniMomy_t=-1000;posIniMomz_t=-1000;
-  BxIntegral_t = -1000; ByIntegral_t = -1000; BzIntegral_t = -1000; 
-  BzIntegral1_t = -1000; BzIntegral2_t = -1000; BzIntegral3_t = -1000; 
+  BxIntegral_t = -1000; ByIntegral_t = -1000; BzIntegral_t = -1000;
+  BzIntegral1_t = -1000; BzIntegral2_t = -1000; BzIntegral3_t = -1000;
   det_n=0;
   save_n=0;
 
@@ -334,7 +338,7 @@ void musrRootOutput::SetVolumeIDMapping(std::string logivol, int volumeID) {
   //  The numbers are used in the root tree, as it is easier to work with numbers
   //  rather than with strings.
   if (SensDetectorMapping[logivol]) {
-    char message[200];  
+    char message[200];
     sprintf(message,"musrRootOutput::SetVolumeIDMapping: Sensitive volume %s already assigned",logivol.c_str());
     musrErrorMessage::GetInstance()->musrError(FATAL,message,false);
   }
@@ -348,7 +352,7 @@ void musrRootOutput::SetVolumeIDMapping(std::string logivol, int volumeID) {
 G4int musrRootOutput::ConvertVolumeToID(std::string logivol) {
   G4int volumeID = SensDetectorMapping[logivol];
   if (volumeID==0) {
-    char message[200];  
+    char message[200];
     sprintf(message,"musrRootOutput::ConvertVolumeToID: No ID number assigned to sensitive volume %s .",logivol.c_str());
     musrErrorMessage::GetInstance()->musrError(SERIOUS,message,true);
   }
@@ -361,7 +365,7 @@ G4int musrRootOutput::ConvertVolumeToID(std::string logivol) {
 G4int musrRootOutput::ConvertProcessToID(std::string processName) {
   G4int processID = ProcessIDMapping[processName];
   if (processID==0) {
-    char message[200];  
+    char message[200];
     sprintf(message,"musrRootOutput::ConvertProcessToID: No ID number assigned to the process \"%s\" .",processName.c_str());
     musrErrorMessage::GetInstance()->musrError(WARNING,message,true);
   }
@@ -397,7 +401,7 @@ void musrRootOutput::SetFieldNomVal(G4int i, G4double value) {
     // cks the following will probably not be correct for electric field,
     //     because the units are tesla.  Should be modified.
     fieldNomVal[i]=value/tesla;
-  } 
+  }
   else {
     char message[200];
     sprintf(message,
@@ -408,30 +412,30 @@ void musrRootOutput::SetFieldNomVal(G4int i, G4double value) {
 }
 
 
-void musrRootOutput::SetDetectorInfo (G4int nDetectors, G4int ID, G4int particleID, G4double edep, 
-			  G4double edep_el, G4double edep_pos, 
-			  G4double edep_gam, G4double edep_mup,G4int nsteps, G4double length, G4double t1, 
+void musrRootOutput::SetDetectorInfo (G4int nDetectors, G4int ID, G4int particleID, G4double edep,
+			  G4double edep_el, G4double edep_pos,
+			  G4double edep_gam, G4double edep_mup,G4int nsteps, G4double length, G4double t1,
 			  G4double t2, G4double x, G4double y, G4double z,
-			  G4double ek, G4double ekVertex, G4double xVertex, G4double yVertex, G4double zVertex, 
+			  G4double ek, G4double ekVertex, G4double xVertex, G4double yVertex, G4double zVertex,
 			  G4int idVolVertex, G4int idProcVertex, G4int idTrackVertex)
 {
   if ((nDetectors<0)||(nDetectors>=(det_nMax-1))) {
-    char message[200];  
+    char message[200];
     sprintf(message,"musrRootOutput.cc::SetDetectorInfo: nDetectors %i is larger than det_nMax = %i",nDetectors,det_nMax);
     musrErrorMessage::GetInstance()->musrError(SERIOUS,message,false);
     return;
   }
   else {
-    det_n=nDetectors+1; 
-    det_ID[nDetectors]=ID; 
+    det_n=nDetectors+1;
+    det_ID[nDetectors]=ID;
     det_edep[nDetectors]=edep/MeV;
-    det_edep_el[nDetectors]=edep_el/MeV; 
+    det_edep_el[nDetectors]=edep_el/MeV;
     det_edep_pos[nDetectors]=edep_pos/MeV;
-    det_edep_gam[nDetectors]=edep_gam/MeV; 
+    det_edep_gam[nDetectors]=edep_gam/MeV;
     det_edep_mup[nDetectors]=edep_mup/MeV;
-    det_nsteps[nDetectors]=nsteps; 
+    det_nsteps[nDetectors]=nsteps;
     det_length[nDetectors]=length/mm;
-    det_time_start[nDetectors]=t1/microsecond;  
+    det_time_start[nDetectors]=t1/microsecond;
     det_time_end[nDetectors]=t2/microsecond;
     det_x[nDetectors]=x/mm;
     det_y[nDetectors]=y/mm;
@@ -449,10 +453,10 @@ void musrRootOutput::SetDetectorInfo (G4int nDetectors, G4int ID, G4int particle
 }
 
 void musrRootOutput::SetDetectorInfoVvv (G4int nDetectors,
-			  G4double ekVertex, G4double xVertex, G4double yVertex, G4double zVertex, 
+			  G4double ekVertex, G4double xVertex, G4double yVertex, G4double zVertex,
 			  G4int idVolVertex, G4int idProcVertex, G4int idTrackVertex, G4int particleID)   {
   if ((nDetectors<0)||(nDetectors>=(det_nMax-1))) {
-    char message[200];  
+    char message[200];
     sprintf(message,"musrRootOutput.cc::SetDetectorInfoVvv: nDetectors %i is larger than det_nMax = %i",nDetectors,det_nMax);
     musrErrorMessage::GetInstance()->musrError(SERIOUS,message,false);
     return;

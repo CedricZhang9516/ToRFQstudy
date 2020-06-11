@@ -43,7 +43,7 @@ class musrPrimaryGeneratorMessenger;
 class musrPrimaryGeneratorAction : public G4VUserPrimaryGeneratorAction
 {
   public:
-    musrPrimaryGeneratorAction(musrDetectorConstruction*);    
+    musrPrimaryGeneratorAction(musrDetectorConstruction*);
    ~musrPrimaryGeneratorAction();
 
   public:
@@ -64,7 +64,7 @@ class musrPrimaryGeneratorAction : public G4VUserPrimaryGeneratorAction
     void SetInitialMuonPolariz(G4ThreeVector vIniPol);
     void SetInitialPolarizFraction(G4double val) {
       if ((val>1.)||(val<-1.)) {
-	G4cout<<"musrPrimaryGeneratorAction.hh: SetInitialPolarizFraction(): polarisation fraction out of range ("<<val<<")"<<G4endl; 
+	G4cout<<"musrPrimaryGeneratorAction.hh: SetInitialPolarizFraction(): polarisation fraction out of range ("<<val<<")"<<G4endl;
 	exit(1);
       }
       polarisFraction=val;
@@ -77,15 +77,15 @@ class musrPrimaryGeneratorAction : public G4VUserPrimaryGeneratorAction
     void SetTurtleMomentumBite (G4ThreeVector smearingParam)
                                {turtleMomentumBite=true; turtleMomentumP0=smearingParam[0]*MeV; turtleSmearingFactor=smearingParam[1]*0.01;}
     void SetPrimaryParticule(G4String particleName);
-    static G4String GetPrimaryName();                
+    static G4String GetPrimaryName();
 
   private:
     G4ParticleGun*                particleGun;	  // pointer a to G4 service class
     G4GeneralParticleSource*      particleSource; // pointer to the G4GeneralParticleSource, needed for radioactive samples
     musrDetectorConstruction*      musrDetector;  // pointer to the geometry
-    
+
     musrPrimaryGeneratorMessenger* gunMessenger;  // messenger of this class
-    G4String                      rndmFlag;	  // flag for a random impact point       
+    G4String                      rndmFlag;	  // flag for a random impact point
 
   // cks delete    G4ParticleDefinition* muonMinusParticle;
     // cks Alpha and proton particles implemented for the simulation of Juan Pablo Urrego
@@ -95,6 +95,7 @@ class musrPrimaryGeneratorAction : public G4VUserPrimaryGeneratorAction
 
     static G4String thePrimaryParticleName ;
 
+    //G4double MUONID; //MUONID added by Cedric, 200610
     G4double x0, y0, z0, xSigma, ySigma, zSigma, rMaxAllowed, zMinAllowed, zMaxAllowed;
     G4double t0, tSigma;  //P.B. 13 May 2009
     G4double p0, pSigma, pMinAllowed, pMaxAllowed;
@@ -115,7 +116,7 @@ class musrPrimaryGeneratorAction : public G4VUserPrimaryGeneratorAction
     G4double turtleMomentumP0;
     G4double turtleSmearingFactor;
 
-public: 
+public:
     static G4bool setRandomNrSeedAccordingEventNr;
     static G4bool setRandomNrSeedFromFile;
     static G4bool setRandomNrSeedFromFile_RNDM;

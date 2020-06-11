@@ -53,10 +53,10 @@ std::vector<int> * musrPrimaryGeneratorAction::GetPointerToSeedVector() {
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....
- 
+
 musrPrimaryGeneratorAction::musrPrimaryGeneratorAction(
                                             musrDetectorConstruction* musrDC)
-  :musrDetector(musrDC), x0(0), y0(0), z0(-10*cm), xSigma(0), ySigma(0), zSigma(0), 
+  :musrDetector(musrDC), x0(0), y0(0), z0(-10*cm), xSigma(0), ySigma(0), zSigma(0),
    rMaxAllowed(1e10*mm), zMinAllowed(-1e10*mm), zMaxAllowed(1e10*mm),
    t0(0), tSigma(0),
    p0(0), pSigma(0), pMinAllowed(0), pMaxAllowed(1e10*mm),
@@ -65,7 +65,8 @@ musrPrimaryGeneratorAction::musrPrimaryGeneratorAction(
    polarisFraction(1.),
    muonDecayTimeMin(-1), muonDecayTimeMax(-1), muonMeanLife(2197.03*ns),
    takeMuonsFromTurtleFile(false), z0_InitialTurtle(0),
-   numberOfGeneratedEvents(0), 
+   numberOfGeneratedEvents(0),
+   MUONID(0),//added  by Cedric, 200610
    turtleMomentumBite(false), turtleMomentumP0(0.), turtleSmearingFactor(0.)
 						      //, firstCall(true)
 {
@@ -94,7 +95,7 @@ musrPrimaryGeneratorAction::musrPrimaryGeneratorAction(
     particleGun = new G4ParticleGun(n_particle);
     particleGun->SetParticleDefinition(muonParticle);
   }
-} 
+}
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....
 
@@ -115,12 +116,12 @@ void musrPrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
 
   // Clear Root variables
   musrRootOutput* myRootOutput = musrRootOutput::GetRootInstance();
-  myRootOutput->ClearAllRootVariables();  // Note that musrPrimaryGeneratorAction::GeneratePrimaries 
+  myRootOutput->ClearAllRootVariables();  // Note that musrPrimaryGeneratorAction::GeneratePrimaries
                                           // is called before the musrEventAction::BeginOfEventAction.
                                           // Therefore "ClearAllRootVariables" is called already here
                                           // (before the "SetInitialMuonParameters".
 
-  // Set or read the seeds of random number generator 
+  // Set or read the seeds of random number generator
   boolPrintInfoAboutGeneratedParticles=false;
   SetOrReadTheRandomNumberSeeds(anEvent->GetEventID());
 
@@ -131,15 +132,17 @@ void musrPrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
   }
 
   G4double x, y, z;
+  G4double MUONID; // Cedric 200610
   G4double p;
   G4double xangle, yangle;
   float zTmp;
   if (takeMuonsFromTurtleFile) {
 
-    char  line[501];  
+    char  line[501];
     G4int checkNrOfCounts=0;
     do {
       float xTmp, yTmp, xAngleTmp, yAngleTmp, pTmp;
+      double MUONIDtemp;
       float dummy1, dummy2;
       int Ztmp=-1, Atmp=-1;
       fgets(line,500,fTurtleFile);
@@ -150,10 +153,11 @@ void musrPrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
       }
       numberOfGeneratedEvents++;
       //sscanf(&line[0],"%g %g %g %g %g %g %g %d %d",&xTmp,&xAngleTmp,&yTmp,&yAngleTmp,&pTmp,&dummy1,&dummy2,&Ztmp,&Atmp);
-      sscanf(&line[0],"%g %g %g %g %g %g %g %d %d",&xTmp,&xAngleTmp,&yTmp,&yAngleTmp,&pTmp,&zTmp,&t0,&Ztmp,&Atmp);
+      sscanf(&line[0],"%g %g %g %g %g %g %g %d %d %g",&xTmp,&xAngleTmp,&yTmp,&yAngleTmp,&pTmp,&zTmp,&t0,&Ztmp,&Atmp,&MUONIDtmp);
       //changed by M. Otani for injection to RFQ study, 150225
+      //MUONID added by Cedric, 200610
       if (boolPrintInfoAboutGeneratedParticles) {
-	G4cout<<"musrPrimaryGeneratorAction::GeneratePrimaries:  Turtle input for this event: "
+	       G4cout<<"musrPrimaryGeneratorAction::GeneratePrimaries:  Turtle input for this event: "
 	      <<xTmp<<", "<<xAngleTmp<<" "<<yTmp<<" "<<yAngleTmp<<" "<< pTmp<<G4endl;
       }
       //cks Implement also alpha and proton particles for the simulation of Juan Pablo Urrego
@@ -161,10 +165,10 @@ void musrPrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
       else if ((Ztmp==2)&&(Atmp==4)) {particleGun->SetParticleDefinition(alphaParticle);}// G4cout<<"alpha particle"<<G4endl;}
       else if ((Ztmp==-1)&&(Atmp==-1)) {;}
       else {
-	G4cout<<"musrPrimaryGeneratorAction: Unknown particle requested in the TURTLE input file: Z="
+	       G4cout<<"musrPrimaryGeneratorAction: Unknown particle requested in the TURTLE input file: Z="
 	      <<Ztmp<<", A="<<Atmp<<G4endl<<"S T O P     F O R C E D" << G4endl;
-	G4cout<<xTmp<<", "<<xAngleTmp<<", "<<yTmp<<", "<<yAngleTmp<<", "<<pTmp<<", "<<dummy1<<", "<<dummy2<<", "<<Ztmp<<", "<<Atmp<<G4endl;
-	exit(1);
+	       G4cout<<xTmp<<", "<<xAngleTmp<<", "<<yTmp<<", "<<yAngleTmp<<", "<<pTmp<<", "<<dummy1<<", "<<dummy2<<", "<<Ztmp<<", "<<Atmp<<G4endl;
+	       exit(1);
       }
       //csk
       xangle = xAngleTmp*mrad;
@@ -174,6 +178,7 @@ void musrPrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
       //y      = yTmp*cm + (z0-z0_InitialTurtle)*tan(yangle) ;       // z0_InitialTurtle is the z0 at whith the turtle file was generated.
       x = xTmp*cm;
       y = yTmp*cm;
+      MUONID = MUONIDtemp;
       //changed by M. Otani for injection to RFQ study, 150225
       p      = pTmp*GeV;
       // add some offset, if requested:
@@ -184,17 +189,17 @@ void musrPrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
       yangle = yangle + yangle0;
       // add some beam pitch, if requested:
       if (pitch!=0) {
-	std::cout << "######################### pitch is ..." << std::endl;
-	xangle += - pitch * (x-x0);
-	yangle += - pitch * (y-y0);
+      	std::cout << "######################### pitch is ..." << std::endl;
+      	xangle += - pitch * (x-x0);
+      	yangle += - pitch * (y-y0);
       }
       // add/remove some momentum smearing, if requested
       if (turtleMomentumBite) {
-	p = turtleMomentumP0 - (turtleMomentumP0-p)*turtleSmearingFactor;
+	       p = turtleMomentumP0 - (turtleMomentumP0-p)*turtleSmearingFactor;
       }
       checkNrOfCounts++;
       if (checkNrOfCounts>1000) {
-	G4cout<<"musrPrimaryGeneratorAction::GeneratePrimaries:  Too strict requirements on the r position!"<<G4endl;
+	       G4cout<<"musrPrimaryGeneratorAction::GeneratePrimaries:  Too strict requirements on the r position!"<<G4endl;
       }
     } while( (x*x+y*y)>(rMaxAllowed*rMaxAllowed) );
     z=z0+zTmp;
@@ -206,7 +211,7 @@ void musrPrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
     //  x0, y0, z0   ... central point around which the muons are generated
     //  xSigma, ySigma, zSigma  ... sigma of the (gaussian) distributions of the beam
     //  x, y, z      ... actual initial position of the generated muon
-    
+
     G4int checkNrOfCounts=0;
     numberOfGeneratedEvents++;
     do {
@@ -226,12 +231,12 @@ void musrPrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
       if (checkNrOfCounts>1000) {
 	G4cout<<"musrPrimaryGeneratorAction::GeneratePrimaries:  Too strict requirements on the r or z position!"<<G4endl;
       }
-    //} while( ((x*x+y*y)>(rMaxAllowed*rMaxAllowed))||(z>zMaxAllowed)||(z<zMinAllowed) ); 
+    //} while( ((x*x+y*y)>(rMaxAllowed*rMaxAllowed))||(z>zMaxAllowed)||(z<zMinAllowed) );
     } while( (((x-x0)*(x-x0)+(y-y0)*(y-y0))>(rMaxAllowed*rMaxAllowed))||(z>zMaxAllowed)||(z<zMinAllowed) );  //PB modified 24.7.2009
                                                     // The generated muon has to stay
                                                     // within some well defined region,
                                                     // e.g. within the beampipe
-  
+
     // Now generate the momentum
     checkNrOfCounts=0;
     do {
@@ -242,23 +247,23 @@ void musrPrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
 	G4cout<<"musrPrimaryGeneratorAction::GeneratePrimaries:  Too strict requirements on the momentum!"<<G4endl;
       }
     } while ( (p>pMaxAllowed)||(p<pMinAllowed) );
-    
-    
+
+
     // Add some initial angle (px and py component of the momentum)
     if (xangleSigma>0) { xangle = G4RandGauss::shoot(xangle0,xangleSigma); }
     else { xangle = xangle0; }
     //  Add the beam tilt, which depends on the distance from the beam centre.
-    //    if (xSigma>0) {xangle += - pitch * (x-x0)/xSigma; } 
-    if (pitch!=0) {xangle += - pitch * (x-x0); } 
+    //    if (xSigma>0) {xangle += - pitch * (x-x0)/xSigma; }
+    if (pitch!=0) {xangle += - pitch * (x-x0); }
 
     if (yangleSigma>0) { yangle = G4RandGauss::shoot(yangle0,yangleSigma); }
     else { yangle = yangle0; }
     //  Add the beam tilt, which depends on the distance from the beam centre.
-    //    if (ySigma>0) {yangle += - pitch * (y-y0)/ySigma; } 
-    if (pitch!=0) {yangle += - pitch * (y-y0); } 
+    //    if (ySigma>0) {yangle += - pitch * (y-y0)/ySigma; }
+    if (pitch!=0) {yangle += - pitch * (y-y0); }
 
   }  // end of the part specific for the muons generated by random rather then from TURTLE
-  
+
 
   // Calculate particle (muon) starting time
   G4double ParticleTime; //P.B. 13 May 2009
@@ -288,7 +293,7 @@ void musrPrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
 	    << "pz: " << pz << "\t"
 	    << "p: " << p << std::endl;
 
-  // Assign spin 
+  // Assign spin
   G4double xpolaris=0, ypolaris=0, zpolaris=0;
   if (UnpolarisedMuonBeam) {
     // for genarating random numbers on the sphere see  http://mathworld.wolfram.com/SpherePointPicking.html
@@ -310,7 +315,7 @@ void musrPrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
       //      G4cout<<"spin down"<<G4endl;
     }
   }
-  
+
   particleGun->SetParticlePosition(G4ThreeVector(x,y,z));
   G4double particle_mass = particleGun->GetParticleDefinition()->GetPDGMass();
   G4double particleEnergy = std::sqrt(p*p+particle_mass*particle_mass)-particle_mass;
@@ -334,7 +339,7 @@ void musrPrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
   //  G4cout<<"     p="<<px/MeV<<","<<py/MeV<<","<<pz/MeV<<"    E="<< (particleGun->GetParticleEnergy())/MeV<<G4endl;
   //  G4cout<<"     polarisation="<<xpolaris<<","<<ypolaris<<","<<zpolaris<<G4endl;
 
-  
+
 
 
   // if requested by "/gun/decaytimelimits", set the decay time of the muon such that it is within
@@ -357,12 +362,16 @@ void musrPrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
     decaytime = 2e6*ns;
     //    G4cout<<"decaytime="<<decaytime/ns<<"ns."<< G4endl;
     generatedMuon->SetProperTime(decaytime);
-    
+
   }
 
   // Save variables into ROOT output file:
   myRootOutput->SetInitialMuonParameters(x,y,z,px,py,pz,xpolaris,ypolaris,zpolaris,ParticleTime);
   myRootOutput->StoreGeantParameter(7,float(numberOfGeneratedEvents));
+
+  myRootOutput->SetMuonID(MUONID);
+  //StoreGeantParameter(8,double());
+
   if (boolPrintInfoAboutGeneratedParticles) {
     G4cout<<"musrPrimaryGeneratorAction::GeneratePrimaries:  x="<<x<<", y="<<y<<", z="<<z<<G4endl;
     G4cout<<"      px="<<px<<", py="<<py<<", pz="<<pz<<", xpolaris="<<xpolaris<<", ypolaris="<<ypolaris<<", zpolaris="<<zpolaris<<G4endl;
@@ -401,8 +410,8 @@ void musrPrimaryGeneratorAction::SetMuonDecayTimeLimits(G4ThreeVector decayTimeL
   // store the muon decay time parameters to the Root output
   musrRootOutput* myRootOutput = musrRootOutput::GetRootInstance();
   myRootOutput->StoreGeantParameter(2,muonDecayTimeMin/microsecond);
-  myRootOutput->StoreGeantParameter(3,muonDecayTimeMax/microsecond); 
-  myRootOutput->StoreGeantParameter(4,muonMeanLife/microsecond); 
+  myRootOutput->StoreGeantParameter(3,muonDecayTimeMax/microsecond);
+  myRootOutput->StoreGeantParameter(4,muonMeanLife/microsecond);
 }
 
 //===============================================================================
@@ -410,7 +419,7 @@ void musrPrimaryGeneratorAction::SetTurtleInput(G4String turtleFileName) {
   takeMuonsFromTurtleFile = true;
   fTurtleFile = fopen(turtleFileName.c_str(),"r");
   if (fTurtleFile==NULL) {
-    G4cout << "E R R O R :    Failed to open TURTLE input file \"" << turtleFileName 
+    G4cout << "E R R O R :    Failed to open TURTLE input file \"" << turtleFileName
 	   <<"\"."<< G4endl;
     G4cout << "S T O P    F O R C E D" << G4endl;
     exit(1);
@@ -448,7 +457,7 @@ void musrPrimaryGeneratorAction::SetOrReadTheRandomNumberSeeds(G4int eventID) {
       G4RunManager::GetRunManager()->RestoreRandomNumberStatus("kamil.rndm");
       boolPrintInfoAboutGeneratedParticles = true;
     }
-  }  
+  }
   if (setRandomNrSeedFromFile) {
     //    G4cout<<"RandomNrInitialisers.size()="<<RandomNrInitialisers->size()<<G4endl;
     if (eventID < int(pointerToSeedVector->size())) {
@@ -472,7 +481,7 @@ void musrPrimaryGeneratorAction::SetOrReadTheRandomNumberSeeds(G4int eventID) {
     //
     //    G4cout <<"      thisEventNr="<<thisEventNr;
     CLHEP::HepRandom::setTheSeed(eventID);
-    //    G4cout <<"     getTheSeed="<<CLHEP::HepRandom::getTheSeed()<< G4endl; 
+    //    G4cout <<"     getTheSeed="<<CLHEP::HepRandom::getTheSeed()<< G4endl;
     CLHEP::RandGauss::setFlag(false);
   }
 }
@@ -491,7 +500,7 @@ void musrPrimaryGeneratorAction::SetPrimaryParticule(G4String particleName) {
   G4ParticleDefinition* particule= particleTable->FindParticle(particleName);
   if (particule!=NULL) {
     G4cout<<"   musrPrimaryGeneratorAction::SetPrimaryParticleMuMinus():  USING "
-	  <<particleName<<" AS PRIMARY PARTICLE!"<<G4endl; 
+	  <<particleName<<" AS PRIMARY PARTICLE!"<<G4endl;
     particleGun->SetParticleDefinition(particule);
   }
   else {
