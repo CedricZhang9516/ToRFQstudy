@@ -178,7 +178,7 @@ void musrPrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
       //y      = yTmp*cm + (z0-z0_InitialTurtle)*tan(yangle) ;       // z0_InitialTurtle is the z0 at whith the turtle file was generated.
       x = xTmp*cm;
       y = yTmp*cm;
-      MUONID = MUONIDtemp;
+      MUONID = MUONIDtmp;
       //changed by M. Otani for injection to RFQ study, 150225
       p      = pTmp*GeV;
       // add some offset, if requested:
