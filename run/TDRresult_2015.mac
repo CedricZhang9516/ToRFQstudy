@@ -1,26 +1,26 @@
 # using this mac., RFQ input was created and the results are described in TDR
 # Macro file for musr.cc - Construct detector, set fields and other parameters.
 # Last modified by T. Shiroka: 17.03.2008
-# PB MACRO TEST 20 Feb 2009 
+# PB MACRO TEST 20 Feb 2009
 #
 
 # How to run from run directory: ../bin/Linux-g++/musrSim xxxx.mac  (append "idle" for prompt after running)
 #             ../bin/Linux-g++/musrSim xxxx.mac > fname.txt (stores output on a txt file)
 
 ###############################################################################################
-# New commands: /gun/starttime                                                              
+# New commands: /gun/starttime
 #               /gun/starttimesigma
 # New solids:   cylpart
 ###############################################################################################
 
 ###############################################################################################
-#                                                                                             # 
+#                                                                                             #
 # Specify the geometry parameters in this file (all dimensions in mm)                         #
 # a. Lines starting with hash marks "#" are comments                                          #
 # b  Lines starting with #* are temporary comments. Remove/modify to change the configuration #
 # c. Lines starting with /lem4/command are commands for the executable program                #
-# d. Lines starting with /vis, /gun, etc. are common macro commands                           # 
-# e. Beam-line components are ordered from MCH to sample                                      # 
+# d. Lines starting with /vis, /gun, etc. are common macro commands                           #
+# e. Beam-line components are ordered from MCH to sample                                      #
 # f. z axis of MCH is at x=-780 mm  ; z axis of sample is at x=+780 mm                        #
 # g. z position of the center between T and S1 is z=-845 mm                                   #
 # h. positions are always relative to the mother volume !!!                                   #
@@ -39,7 +39,7 @@
 
 # 3 parameters -> Define Euler angles (the 4th par. is set to zero).
 # 4 parameters -> Define axis + rotation.
-# HEP computations ordinarily use the active rotation viewpoint (object is rotated NOT axes). 
+# HEP computations ordinarily use the active rotation viewpoint (object is rotated NOT axes).
 # Therefore, rotations about an axis imply ACTIVE COUNTER-CLOCKWISE rotation in this package.
 # Rotation around a specified axis means counter-clockwise rot. around the positive direction of the axis.
 
@@ -85,11 +85,11 @@
 #==============================================================================================================
 #/musr/command construct tubs Grid    38.0    85.0     1 0 360 Steel           0 0  -93   log_MCHvac norot dead 110
 #/musr/command construct tubs SOAp1   38.0    85.0    19 0 360 Steel           0 0  -63   log_MCHvac norot dead 111
-#/musr/command construct tubs SOAp2   70.0    85.0    98 0 360 Steel           0 0   64   log_MCHvac norot dead 112   
+#/musr/command construct tubs SOAp2   70.0    85.0    98 0 360 Steel           0 0   64   log_MCHvac norot dead 112
 #/musr/command construct tubs SOAp3   38.0    85.0     1 0 360 Steel           0 0  173   log_MCHvac norot dead 113
 /musr/command construct tubs Grid    70.0    130.0     1 0 360 Steel           0 0  -93   log_MCHvac norot dead 110
 /musr/command construct tubs SOAp1   70.0    130.0    19 0 360 Steel           0 0  -63   log_MCHvac norot dead 111
-/musr/command construct tubs SOAp2   120.0    130.0    98 0 360 Steel           0 0   64   log_MCHvac norot dead 112   
+/musr/command construct tubs SOAp2   120.0    130.0    98 0 360 Steel           0 0   64   log_MCHvac norot dead 112
 /musr/command construct tubs SOAp3   50.0    130.0     1 0 360 Steel           0 0  173   log_MCHvac norot dead 113
 
 
@@ -149,14 +149,17 @@
 #/musr/command globalfield SOA_field  780 0 -835.8  fromfile 3DE newSOA_3D_map.map log_MCHvac 1.00
 #/musr/command globalfield SOA_field  780 0 -835.8  fromfile 3DE newSOA_3D_map.map log_MCHvac 0.628
 #/musr/command globalfield SOA_field  780 0 -708  fromfile 3DE newSOA_3D_map.map log_MCHvac 0.635
-#/musr/command globalfield SOA_field  780 0 -708  fromfile 3DE newSOA2_3D_map_v3.map log_MCHvac 0.635
+### THIS IS THE TDR FILED OTANI_SAN USE:
+/musr/command globalfield SOA_field  780 0 -708  fromfile 3DE newSOA2_3D_map_v3.map log_MCHvac 0.635
 #/musr/command globalfield SOA_field  780 0 -708  fromfile 3DE newSOA2_3D_map_v3_180827.map log_MCHvac 0.635
 #/musr/command globalfield SOA_field  780 0 -708  fromfile 3DE newSOA_cedric.map log_MCHvac 0.635
 #/musr/command globalfield SOA_field  780 0 -708  fromfile 3DE SOA_new_180828.map log_MCHvac 0.635
 #/musr/command globalfield SOA_field  780 0 -708  fromfile 3DE SOA_new_180828_3.map log_MCHvac 0.635
 #/musr/command globalfield SOA_field  780 0 -708  fromfile 3DE SOA_new_180828_3.map log_MCHvac 0.635
 #/musr/command globalfield SOA_field  780 0 -708  fromfile 3DE test_181127.map log_MCHvac 0.635
-/musr/command globalfield SOA_field  780 0 -708  fromfile 3DE test_181127_4.map log_MCHvac 0.635
+#/musr/command globalfield SOA_field  780 0 -708  fromfile 3DE test_181127_4.map log_MCHvac 0.635
+
+
 
 # gaussmeter probe point:
 #/musr/command globalfield printFieldValueAtPoint  -410 0 745
@@ -294,11 +297,11 @@
 # Default muon spin direction: 100, i.e. 0x.
 # Default particle type: mu+ (can be changed to Mu)
 
-# Set particle type	
+# Set particle type
 #*/gun/particle Mu
 /gun/primaryparticle mu+
 
-# Set beam vertex 
+# Set beam vertex
 # CFoil at -1144 mm, acceleration starts at -1154.15 mm
 #TDR
 /gun/vertex  780. 0. -845. mm
@@ -314,7 +317,7 @@
 # Negative sigma values => random FLAT RECTANGULAR distribution (area 2x.2y)
 # Use vertexboundary with (vb < sigma_xy) to obtain a CIRCULAR beam spot
 # /gun/vertexsigma 0 0 0 mm ==> Very SLOW with mag. field ON and centered beam
-#*/gun/vertexsigma  42.5  42.5  0 mm 
+#*/gun/vertexsigma  42.5  42.5  0 mm
 #/gun/vertexsigma   19. 19.  1  mm
 
 #                   Rmax   zmin     zmax
@@ -325,7 +328,7 @@
 #*/gun/vertexboundary 3 -1e6 1e6 mm
 
 #/gun/boxboundarycentre  780 -5 -845 mm
-#/gun/boxboundary        7  4  0.5 mm 
+#/gun/boxboundary        7  4  0.5 mm
 
 
 # Set beam momentum (USE only as an ALTERNATIVE to setting energy!)
@@ -337,8 +340,8 @@
 # muon rest mass = 105.658 MeV/c2
 
 # Set muon energy before hitting TD; a constant field in front of the C-foil accelerates the muons
-# to add 3.73 keV 
-#/gun/kenergy 0.001 keV 
+# to add 3.73 keV
+#/gun/kenergy 0.001 keV
 
 # Set beam momentum direction
 #/gun/direction 0.0 0.0 1.0 direction command not defined in musrSim version
@@ -409,4 +412,4 @@
 #/run/beamOn   50
 #/run/beamOn   10
 #*/run/beamOn 50000
- 
+
