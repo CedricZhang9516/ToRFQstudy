@@ -1,8 +1,8 @@
 #!/usr/bin/perl
 use Math::Trig;
-$filename = "SOA_command_new.comi";
+$filename = "SOA_command_new_201130_reflection.comi";
 #$op_name  = "SOA_new.op3";
-$op_name  = "SOA_new_180828_4.op3";
+$op_name  = "SOA_201130_reflection.op3";
 open(IN, "> $filename");
 $pi          = atan2(1,1)*4;
 
@@ -19,7 +19,8 @@ $len_S4   = 2;
 #front position of Z
 $z_Tgt    = -1.0*$len_Tgt;
 #$z_S1     = $z_Tgt + $len_Tgt + 9.9; #TDR
-$z_S1     = $z_Tgt + $len_Tgt + 50; #2018/8/27, Cedric study
+#$z_S1     = $z_Tgt + $len_Tgt + 50; #2018/8/27, Cedric study
+$z_S1     = $z_Tgt + $len_Tgt + 25; #2020/11/30, Cedric study, new multi-piece
 $z_S2     = $z_S1  + $len_S1  + 10;
 $z_S3     = $z_S2  + $len_S2  + 10;
 $z_S4     = $z_S3  + $len_S3  + 10;
