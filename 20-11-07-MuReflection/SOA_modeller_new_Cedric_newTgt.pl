@@ -1,8 +1,8 @@
 #!/usr/bin/perl
 use Math::Trig;
-$filename = "SOA_command_new_201130_reflection.comi";
+$filename = "SOA_command_new_201201_reflection-2.comi";
 #$op_name  = "SOA_new.op3";
-$op_name  = "SOA_201130_reflection.op3";
+$op_name  = "SOA_201201_reflection-2.op3";
 open(IN, "> $filename");
 $pi          = atan2(1,1)*4;
 
@@ -77,8 +77,8 @@ $V_GND= 0;
 #$V_S2 = 7730;
 #$V_S3 = 6730;
 #2018/8/28, Cedric study
-$V_Tgt= 9003;
-$V_S1 = 7428;
+#$V_Tgt= 9003;
+#$V_S1 = 7428;
 #$V_S2 = 7170;
 #$V_S3 = 6244;
 #108028_2
@@ -88,8 +88,26 @@ $V_S1 = 7428;
 #$V_S2 = 7300;
 #$V_S3 = 6000;
 #108028_4
-$V_S2 = 7300;
-$V_S3 = 5500;
+
+#201130_Otani-2018
+#$V_Tgt= 9003;
+#$V_S1 = 7428;
+#$V_S2 = 7300;
+#$V_S3 = 5500;
+
+#201201_1_TDR
+#$V_Tgt= 9003;
+#$V_S1 = 8903;
+#$V_S2 = 8594;
+#$V_S3 = 7484;
+
+
+#201201_2
+$V_Tgt= 9003;
+$V_S1 = 8594;
+$V_S2 = 8274;
+$V_S3 = 7164;
+
 
 #$V_S3 = 5484;#v3
 $V_S4 = 0;
