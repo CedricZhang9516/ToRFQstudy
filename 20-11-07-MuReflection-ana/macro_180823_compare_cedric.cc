@@ -17,8 +17,17 @@ const string filename[nf] =
     //"data/tdr_cedric.root",
    //"data/tdr_cedric_D87000_T322_Nrepeat2000000_Xfree1_Thick7.12_NewGeo0_0828_3_2.root",
    //"data/musr_0.root"
-  "data/Reflection-201201-1.root",
+
+  //"data/Reflection-201201-1.root",
+
+  //"data/Reflection-210107-geo.root",
+  "data/Reflection-210113-geo-6444.root",
   "data/Reflection-201201-2.root"
+  //"data/Reflection-201201-2.root"
+
+
+
+
   //"data/Reflection-201130-1.root"
    //"data/musr_0.root"
    //"data/tdr_cedric_D87000_T322_Nrepeat840000_Xfree1_Thick2.00_NewGeo1_0828_3.root"
@@ -43,9 +52,9 @@ TH1F*  fHe[nf];
 TH1F*  fHt[nf];
 TH1F*  fHx[nf];
 TH1F*  fHy[nf];
-//const int    xnbin = 100;
+const int    xnbin = 200;
 //const int    xnbin = 120;
-const int    xnbin = 220;
+//const int    xnbin = 220;
 
 //const double xmin  = 5.6;
 //const double xmin  = 4.75;
@@ -122,7 +131,7 @@ void macro_180823_compare_cedric(){
 
 
 
-  gStyle->SetOptStat(0);
+  //gStyle->SetOptStat(0);
 
     c0 = new TCanvas("c0","");
     c5 = new TCanvas("c5","");c5->Divide(1,3);
@@ -237,8 +246,8 @@ void macro_180823_compare_cedric(){
   }
   c4->cd(3);
   fHx[0]->SetTitle("X distribution at RFQ entrance");
-  for(int i=0;i<nf; i++){
-      if(i==0)
+  for(int i=1;i<nf; i++){
+      if(i==1)
       fHx[i]->DrawNormalized("");
     else
       fHx[i]->DrawNormalized("same");
@@ -269,12 +278,13 @@ void macro_180823_compare_cedric(){
   }
   c4->cd(4);
   fHy[0]->SetTitle("Y distribution at RFQ entrance");
-  for(int i=0;i<nf; i++){
-      if(i==0)
+  for(int i=1;i<nf; i++){
+      if(i==1)
       fHy[i]->DrawNormalized("");
     else
       fHy[i]->DrawNormalized("same");
   }
+  fHy[0]->Draw("");
   c3->Update();
 
   c5->cd(1);fHy[1-1]->Draw("");
